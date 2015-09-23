@@ -1,0 +1,25 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 4096
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-6.7
+
+suites:
+  - name: default
+    run_list:
+      - recipe[oracle::default]
+    attributes:
+      oracle:
+        rdbms:
+          dbbin_version: '12c'
+          install_files: ['http://192.168.1.222:8000/linuxamd64_12102_database_1of2.zip', 'http://192.168.1.222:8000/linuxamd64_12102_database_2of2.zip']
+          latest_patch:
+            is_installed: true
+        user:
+          pw_set: true
