@@ -11,7 +11,7 @@ platforms:
   - name: centos-6.7
 
 suites:
-  - name: default
+  - name: oracle-12c
     run_list:
       - recipe[oracle::default]
     attributes:
@@ -19,6 +19,18 @@ suites:
         rdbms:
           dbbin_version: '12c'
           install_files: ['http://192.168.1.222:8000/linuxamd64_12102_database_1of2.zip', 'http://192.168.1.222:8000/linuxamd64_12102_database_2of2.zip']
+          latest_patch:
+            is_installed: true
+        user:
+          pw_set: true
+  - name: oracle-11g
+    run_list:
+      - recipe[oracle::default]
+    attributes:
+      oracle:
+        rdbms:
+          dbbin_version: '11g'
+          install_files: ['http://192.168.1.222:8000/linux.x64_11gR2_database_1of2.zip', 'http://192.168.1.222:8000/linux.x64_11gR2_database_2of2.zip']
           latest_patch:
             is_installed: true
         user:
