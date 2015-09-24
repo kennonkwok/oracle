@@ -98,7 +98,7 @@ end
 # Running the installer. We have to run it with sudo because
 # the installer fails if the user isn't a member of the dba group,
 # and Chef itself doesn't provide a way to call setgroups(2).
-# We also ignore an exit status of 6: runInstaller fails to realise that
+# We also ignore an exit status of 253: runInstaller fails to realise that
 # prerequisites are indeed met on CentOS 6.4.
 
 if node[:oracle][:rdbms][:dbbin_version] == "11g"
@@ -107,7 +107,7 @@ if node[:oracle][:rdbms][:dbbin_version] == "11g"
     cwd "#{node[:oracle][:rdbms][:install_dir]}/database"
     environment (node[:oracle][:rdbms][:env])
     code "sudo -Eu oracle ./runInstaller -silent -waitforcompletion -ignoreSysPrereqs -responseFile #{node[:oracle][:rdbms][:install_dir]}/db11R23.rsp -invPtrLoc #{node[:oracle][:ora_base]}/oraInst.loc"
-    returns [0, 6]
+    returns [0, 253]
   end
 
   execute 'root.sh_rdbms' do
