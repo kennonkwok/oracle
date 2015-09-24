@@ -106,7 +106,7 @@ if node[:oracle][:rdbms][:dbbin_version] == "11g"
   bash 'run_rdbms_installer' do
     cwd "#{node[:oracle][:rdbms][:install_dir]}/database"
     environment (node[:oracle][:rdbms][:env])
-    code "sudo -Eu oracle ./runInstaller -showProgress -silent -waitforcompletion -ignoreSysPrereqs -responseFile #{node[:oracle][:rdbms][:install_dir]}/db11R23.rsp -invPtrLoc #{node[:oracle][:ora_base]}/oraInst.loc"
+    code "sudo -Eu oracle ./runInstaller -silent -waitforcompletion -ignoreSysPrereqs -responseFile #{node[:oracle][:rdbms][:install_dir]}/db11R23.rsp -invPtrLoc #{node[:oracle][:ora_base]}/oraInst.loc"
     returns [0, 6]
   end
 
