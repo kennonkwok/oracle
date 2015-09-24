@@ -58,7 +58,7 @@ default[:oracle][:client][:response_file_url] = ''
 # Source: <http://docs.oracle.com/cd/E11882_01/install.112/e24321/pre_install.htm#CIHFICFD>
 # We omit version-release info by design, as their requirements are satisfied by
 # CentOS 6.4, which is the minimum version targeted by oracle.
-default[:oracle][:rdbms][:deps] = ['binutils', 'compat-libcap1', 'compat-libstdc++-33', 'gcc', 'gcc-c++', 'glibc',
+default[:oracle][:rdbms][:deps] = ['binutils', 'compat-libcap1', 'compat-libstdc++-33', 'gcc', 'gcc-c++', 'glibc', 'glibc.i686',
                                    'glibc-devel', 'ksh', 'libgcc', 'libstdc++', 'libstdc++-devel', 'libaio',
                                    'libaio-devel', 'make', 'sysstat']
 
