@@ -18,7 +18,9 @@ suites:
       oracle:
         rdbms:
           dbbin_version: '12c'
-          install_files: ['http://192.168.1.222:8000/linuxamd64_12102_database_1of2.zip', 'http://192.168.1.222:8000/linuxamd64_12102_database_2of2.zip']
+          install_files:
+            - 'http://192.168.1.222:8000/linuxamd64_12102_database_1of2.zip': '31fdc2af41687b4e547a3a18f796424d8c1af36406d2160f65b0af6a9cd47355'
+            - 'http://192.168.1.222:8000/linuxamd64_12102_database_2of2.zip': '03da14f5e875304b28f0f3bb02af0ec33227885b99c9865df70749d1e220accd'
           latest_patch:
             is_installed: true
         user:
@@ -30,7 +32,9 @@ suites:
       oracle:
         rdbms:
           dbbin_version: '11g'
-          install_files: ['http://192.168.1.222:8000/linux.x64_11gR2_database_1of2.zip', 'http://192.168.1.222:8000/linux.x64_11gR2_database_2of2.zip']
+          install_files:
+            - 'http://192.168.1.222:8000/linux.x64_11gR2_database_1of2.zip': 'ff46188aea66967ffbe1e46a52ac85670a10bc8acea78536540c3b00c6d3b5dc'
+            - 'http://192.168.1.222:8000/linux.x64_11gR2_database_2of2.zip': '008dd2f9d45075cea9cc745fed8a2ce9e42d53afc91bb8c75e1620ba4b95f33a'
           latest_patch:
             is_installed: true
         user:

@@ -77,8 +77,11 @@ default[:oracle][:rdbms][:env_12c] = {'ORACLE_BASE' => node[:oracle][:ora_base],
                                   'ORACLE_HOME' => node[:oracle][:rdbms][:ora_home_12c],
                                   'PATH' => "/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/sbin:#{node[:oracle][:ora_base]}/dba/bin:#{node[:oracle][:rdbms][:ora_home_12c]}/bin:#{node[:oracle][:rdbms][:ora_home_12c]}/OPatch"}
 
-default[:oracle][:rdbms][:install_files] = ['https://https-server.example.localdomain/path/to/p10404530_112030_Linux-x86-64_1of7.zip',
-                                            'https://https-server.example.localdomain/path/to/p10404530_112030_Linux-x86-64_2of7.zip']
+default[:oracle][:rdbms][:install_files] = {'https://https-server.example.localdomain/path/to/p10404530_112030_Linux-x86-64_1of7.zip' =>
+                                            '31fdc2af41687b4e547a3a18f796424d8c1af36406d2160f65b0af6a9cd47355',
+                                            'https://https-server.example.localdomain/path/to/p10404530_112030_Linux-x86-64_2of7.zip' =>
+                                            '03da14f5e875304b28f0f3bb02af0ec33227885b99c9865df70749d1e220accd'
+                                           }
 
 # Client dependencies
 default[:oracle][:client][:deps] = ['binutils', 'compat-libcap1', 'compat-libstdc++-33', 'compat-libstdc++-33.i686', 'gcc', 'gcc-c++', 'glibc', 'glibc.i686',
